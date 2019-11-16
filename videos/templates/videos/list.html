@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+{% block content %}
+    {% if videos %}
+        {% for a in videos %}
+            <h1>{{a.video_name}}</h1>
+            <p>{{a.video_description}}</p>
+            <video width="320" height="240" controls>
+                <source src="{{a.video_path}}.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            {% endfor %}
+    {% else %}
+        Video chka
+    {% endif %}
+
+{% endblock %}
